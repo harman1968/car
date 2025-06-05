@@ -1,0 +1,74 @@
+<!-- Password Section -->
+<section class="password-section" id="password-section">
+    <a href="./admin.html" class="cta-button"></a>
+   
+    <h1>Admin id</h1>
+    <input type="id" placeholder="enter id">
+    <button oneclick="checkid()">check</button>
+    <p id="id-message" style="color: red;"></p>
+   
+    <h2>Admin Login</h2>
+    
+    <input type="password" id="admin-password" placeholder="Enter admin password">
+   
+    <button onclick="checkPassword()">Login</button>
+    <p id="password-message" style="color: red;"></p>
+</section>
+
+
+<section class="admin-dashboard" id="admin-dashboard" style="display: none;">
+    <h2>Admin Dashboard</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Booking ID</th>
+                <th>Customer Name</th>
+                <th>Status</th>
+                <th>Update Status</th>
+            </tr>
+        </thead>
+        <tbody id="booking-list">
+            
+        </tbody>
+    </table>
+</section>
+
+
+<style>
+    .admin-dashboard, .password-section {
+        padding: 20px;
+        background-color: #fff;
+        margin-top: 20px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+    }
+    input[type="password"] {
+        padding: 8px;
+        margin-right: 10px;
+    }
+    button {
+        padding: 8px 12px;
+    }
+</style>
+
+
+<script>
+    function checkPassword() {
+        const password = document.getElementById('admin-password').value;
+        const correctPassword = 'admin123'; // Change this to your desired password
+
+        if (password === correctPassword) {
+            document.getElementById('admin-dashboard').style.display = 'block';
+            document.getElementById('password-section').style.display = 'none';
+        } else {
+            document.getElementById('password-message').textContent = 'Incorrect password. Please try again.';
+        }
+    }
+</script>
